@@ -343,7 +343,7 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 19( return '这个人就是逊了()';
+    if (score <= 19) return '这个人就是逊了()';
     if (score <= 49) return '继续练练？';
     if (score >= 55 && score <= 58) return '千纸鹤女装(小声)';
     if (score <= 89) return 'TCL';
