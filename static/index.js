@@ -346,8 +346,9 @@ function shareText(score) {
     if (score <= 19( return '这个人就是逊了()';
     if (score <= 49) return '继续练练？';
     if (score >= 55 && score <= 58) return '千纸鹤女装(小声)';
-    if (score <= 99) return 'TCL';
-    if (score <= 129) return 'TQL';
+    if (score <= 89) return 'TCL';
+    if (score <= 119) return 'TQL';
+    if (score <= 139) return '佬';
     if (score <= 169) return '您就是音游人？';
     if (score <= 199) return '您';
     if (score >= 205 && score <= 210) return '千纸鹤女装!(应该没人这个分吧)';
