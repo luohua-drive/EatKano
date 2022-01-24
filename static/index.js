@@ -343,9 +343,11 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 49) return '试着好好练一下？';
+    if (score <= 49) return '加油';
+    if (score >= 50 && score <= 60) return '千纸鹤女装！';
     if (score <= 99) return 'TCL';
-    if (score <= 149) return 'TQL';
+    if (score <= 129) return 'TQL';
+    if (score <= 169) return '您就是音游人？';
     if (score <= 199) return '您';
     return '人？';
 }
