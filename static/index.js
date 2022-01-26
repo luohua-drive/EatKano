@@ -196,12 +196,12 @@ let _ttreg = / t{1,2}(\d+)/,
 let last = 2;
 
 function refreshGameLayer(box, loop, offset) {
-    let i = last + Math.floor(Math.random() * 1000) % 2 + (loop ? 0 : 4);
-    if (last == 0 || last == 1) {
+    let i = last + (loop ? 0 : 4);
+    if (last == 1) {
         last = 2;
     }
     else {
-        last = 0;
+        last = 1;
     }
     for (let j = 0; j < box.children.length; j++) {
         let r = box.children[j],
@@ -218,12 +218,14 @@ function refreshGameLayer(box, loop, offset) {
             });
             r.className += ' t' + (Math.floor(Math.random() * 1000) % 5 + 1);
             r.notEmpty = true;
-            let i = (Math.floor(j / 4) + 1) * 4 + Math.floor(Math.random() * 1000) % 4 + last;
-            if (last == 0 || last == 1) {
-                last = 2;
-            }
-            else {
-                last = 0;
+            if (j < box.children.length - 4) {
+                i = (Math.floor(j / 4) + 1) * 4 + last;
+                if (last == 1) {
+                    last = 2;
+                }
+                else {
+                    last = 1;
+                }
             }
         } else {
             r.notEmpty = false;
