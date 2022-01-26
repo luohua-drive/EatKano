@@ -192,8 +192,17 @@ function creatTimeText(n) {
 let _ttreg = / t{1,2}(\d+)/,
     _clearttClsReg = / t{1,2}\d+| bad/;
 
+
+let last = 2;
+
 function refreshGameLayer(box, loop, offset) {
-    let i = Math.floor(Math.random() * 1000) % 4 + (loop ? 0 : 4);
+    let i = last + Math.floor(Math.random() * 1000) % 2 + (loop ? 0 : 4);
+    if (last == 0 || last == 1) {
+        last = 2;
+    }
+    else {
+        last = 0;
+    }
     for (let j = 0; j < box.children.length; j++) {
         let r = box.children[j],
             rstyle = r.style;
@@ -209,7 +218,13 @@ function refreshGameLayer(box, loop, offset) {
             });
             r.className += ' t' + (Math.floor(Math.random() * 1000) % 5 + 1);
             r.notEmpty = true;
-            i = (Math.floor(j / 4) + 1) * 4 + Math.floor(Math.random() * 1000) % 4;
+            let i = last + Math.floor(Math.random() * 1000) % 2 + (loop ? 0 : 4);
+            if (last == 0 || last == 1) {
+                last = 2;
+            }
+            else {
+                last = 0;
+            }
         } else {
             r.notEmpty = false;
         }
