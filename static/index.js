@@ -196,7 +196,7 @@ let _ttreg = / t{1,2}(\d+)/,
 let last = 2;
 
 function refreshGameLayer(box, loop, offset) {
-    let i = last + (loop ? 0 : 4) + Math.floor(Math.random() * 1000) % 2;
+    let i = last + (loop ? 0 : 4);
     if (last == 1) {
         last = 2;
     }
